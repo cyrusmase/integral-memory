@@ -2,14 +2,18 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Math{
+    static public int choice;
     public static void main(String[] args){
-        System.out.print("------------------\n(1) Find Change X\n------------------\n");
-        System.out.print("(*) Select from the menu above: ");
+    menu();
     start(); 
     }
+    public static void menu(){
+        System.out.print("------------------\n(1) Find Change X\n------------------\n");
+        System.out.print("(*) Select from the menu above: ");
+    }
     public static void start(){
+        try{
         Scanner c = new Scanner(System.in);
-        int choice;
         choice = c.nextInt();
        // System.out.println("Input: "+choice);
         switch(choice){
@@ -30,29 +34,29 @@ public class Math{
             break;
         }
         c.close();
+    }catch(InputMismatchException e){
+        System.out.println("\n(x) Please enter a VALID choice from the list!\n");
+        menu();
+        start();
+    }
     }
     public static void findChangeX(){
-        int temp;
-        int[] b_array = new int[10];
-        int[] a_array = new int[10];
         try{
         int a,b,n;
         String answer;
+        double dec_answer;
         Scanner x = new Scanner(System.in);
-        System.out.print("enter value of b: ");
+        System.out.print("  Enter value of b: ");
         b = x.nextInt();
-        System.out.print("enter value of a: ");
+        System.out.print("  Enter value of a: ");
         a = x.nextInt();
-        System.out.print("enter value of n: ");
+        System.out.print("  Enter value of n: ");
         n = x.nextInt();
         answer = ((b-a)+"/"+n);
-        for(int i = 0; i<=n; i++){
-            temp = x.nextInt();
-            b_array[i] = temp + n;
-        }
+        dec_answer = ((b-a)/n);
         x.close();
-        System.out.println(b_array);
-        System.out.println("Answer: "+ answer);
+        System.out.println("Answer in fraction form: "+ answer);
+        System.out.println("Answer in decimal form: "+ dec_answer);
         }catch(InputMismatchException e){
             System.out.println("Please enter a valid integer!");
             findChangeX();
