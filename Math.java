@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Math{
-    static public int choice;
+
     public static void main(String[] args){
     menu();
     start(); 
@@ -12,8 +12,9 @@ public class Math{
         System.out.print("(*) Select from the menu above: ");
     }
     public static void start(){
-        try{
         Scanner c = new Scanner(System.in);
+        try{
+        int choice;
         choice = c.nextInt();
        // System.out.println("Input: "+choice);
         switch(choice){
@@ -39,7 +40,7 @@ public class Math{
         menu();
         start();
     }
-    }
+}
     public static void findChangeX(){
         try{
         int a,b,n;
@@ -57,8 +58,9 @@ public class Math{
         x.close();
         System.out.println("Answer in fraction form: "+ answer);
         System.out.println("Answer in decimal form: "+ dec_answer);
+        System.out.println("Function complete!\n");
         }catch(InputMismatchException e){
-            System.out.println("Please enter a valid integer!");
+            System.out.println("(x) Please enter a valid integer!");
             findChangeX();
         }
 
