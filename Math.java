@@ -2,6 +2,11 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Math{
+
+    public static void main(String[] args){
+    menu();
+    start(); 
+    }
     public static void menu(){
         System.out.print("------------------\n(1) Find Change X\n(2) NI\n(3) NI\n(4) NI\n(5) Exit\n------------------\n");
         System.out.print("(*) Select from the menu above: ");
@@ -32,14 +37,13 @@ public class Math{
             end = true;
             break;
         }
-   
+        c.close();
     }catch(InputMismatchException e){
         System.out.println("\n(x) Please enter a VALID choice from the list!\n");
         menu();
         start();
     }
     System.out.println("Closed!");
-    c.close();
 }
 }
     public static void findChangeX(){
@@ -80,8 +84,4 @@ public class Math{
         }
 
     }
-    public static void main(String[] args){
-        menu();
-        start();
-        }
 }
