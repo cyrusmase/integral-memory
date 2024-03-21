@@ -8,7 +8,7 @@ public class Math{
     start(); 
     }
     public static void menu(){
-        System.out.print("------------------\n(1) Find Change X\n------------------\n");
+        System.out.print("------------------\n(1) Find Change X\n------------------\n(2) NI\n(3) NI\n(4) NI\n(5) NI\n");
         System.out.print("(*) Select from the menu above: ");
     }
     public static void start(){
