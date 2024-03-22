@@ -2,7 +2,7 @@ import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-public class Main {
+public class Math {
 
     private static final Scanner scanner = new Scanner(System.in);
 
