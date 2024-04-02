@@ -1,6 +1,10 @@
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
+import java.util.*;
+
 
 public class Math {
 
@@ -15,7 +19,7 @@ public class Math {
         System.out.print(
             "------------------\n" +
             "(1) Find Change X\n" +
-            "(2) NI\n" +
+            "(2) Applying Trapezoidal Rule\n" +
             "(3) NI\n" +
             "(4) NI\n" +
             "(5) Exit\n" +
@@ -23,7 +27,7 @@ public class Math {
         System.out.print("(*) Select from the menu above: ");
     }
 
-    public static void start() {
+    public static void start(){
         boolean end = false;
         while (!end ) { // clean code
                 int choice = readInt();
@@ -33,7 +37,7 @@ public class Math {
                         findChangeX();
                         break;
                     case 2:
-
+                        findTrap();
                         break;
                     case 3:
 
@@ -89,6 +93,62 @@ public class Math {
             findChangeX();
         }
     }
+
+    public static void findTrap(){
+    try{
+        double b,a,n,changeX;
+        int Trap_n;
+        String check = null;
+        String fixIn;
+        double[] ar;
+        System.out.println("Please enter the variables for change X using ENTER to seperate variables!");
+        System.out.print("What is the value for B?: ");
+        b=scanner.nextDouble();
+        System.out.print("What is the value for A?: ");
+        a=scanner.nextDouble();
+        System.out.print("What is the value for N?: ");
+        n=scanner.nextDouble();
+        System.out.print("Awesome! You entered: "+b+" for B; "+a+" for A; and "+n+" for N. Is this correct? [Y/N]");
+        check=scanner.next();
+        if(check.equalsIgnoreCase("y")){
+
+        }else if(check.equalsIgnoreCase("n")){
+            System.out.print("Which entry is incorrect? [B/A/N]");
+            fixIn = scanner.next();
+            if(fixIn.equalsIgnoreCase("b")){
+                System.out.print("Please enter the correct values for input B: ");
+                b=scanner.nextDouble();
+            }
+            if(fixIn.equalsIgnoreCase("a")){
+                System.out.print("Please enter the correct values for input A: ");
+                a=scanner.nextDouble();
+            }
+            if(fixIn.equalsIgnoreCase("n")){
+                System.out.print("Please enter the correct values for input N: ");
+                n=scanner.nextDouble();
+            }
+        }else if(check.equals(null)){
+            System.out.println("Error check = NULL; Invalid input!");
+        }
+        changeX = ((b - a) + n);
+        System.out.println("How many values of X are there? This should be something similar to the value for 'N' entered earlier!");
+        System.out.print("Number of X values: ");
+        Trap_n = scanner.nextInt();
+        ar = new double[Trap_n];
+        for(int i = 0; i<ar.length;i++){
+            ar[i] = Trap_n;
+            System.out.println("System says: Added to AR.");
+        }
+        for(int i = 0; i<ar.length;i++){
+        System.out.println(ar[i]);    
+        }
+        
+  
+    }catch(InputMismatchException i){
+        i.getMessage();
+        System.out.println("Encountered an error! - Input Mismatch!");
+    }
+}
 
     private static int readInt() {
         while (true) {
